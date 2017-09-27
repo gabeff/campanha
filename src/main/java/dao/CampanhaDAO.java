@@ -242,6 +242,9 @@ public class CampanhaDAO extends Utils {
 	public void deletarCampanhas() {
 		// conexao com o banco
 		Connection conn = null;
+		
+		// deletar associacao campanhas
+		deletarAssociacaoCampanhas();
 
 		// deletar todas as campanhas cadastradas
 		try {
@@ -250,6 +253,39 @@ public class CampanhaDAO extends Utils {
 
 			// script delete para apagar as campanhas
 			String sql = "DELETE FROM teste.campanha;";
+			PreparedStatement pstmt = (PreparedStatement) conn.prepareStatement(sql);
+
+			// executa update sql
+			pstmt.execute();
+			pstmt.close();
+
+		} catch (IOException e) {
+			e.printStackTrace();
+		} catch (SQLException e) {
+			e.printStackTrace();
+		} catch (PropertyVetoException e) {
+			e.printStackTrace();
+		} finally {
+			try {
+				// fechar conexao
+				conn.close();
+			} catch (SQLException e) {
+				e.printStackTrace();
+			}
+		}
+	}
+	
+	public void deletarAssociacaoCampanhas() {
+		// conexao com o banco
+		Connection conn = null;
+
+		// deletar todas as campanhas cadastradas
+		try {
+			// pegar conexao
+			conn = getConnection();
+
+			// script delete para apagar as campanhas
+			String sql = "DELETE FROM teste.cliente_campanhas;";
 			PreparedStatement pstmt = (PreparedStatement) conn.prepareStatement(sql);
 
 			// executa update sql
