@@ -16,7 +16,7 @@ Eu, como usuário, quero administrar os dados da Campanha e fornecer mecanismos 
 *	No cadastramento de uma nova campanha, deve-se verificar se já existe uma campanha ativa para aquele período (vigência), caso exista uma campanha ou N campanhas associadas naquele período, o sistema deverá somar um dia no término da vigência de cada campanha já existente. Caso a data final da vigência seja igual a outra campanha, deverá ser acrescido um dia a mais de forma que as campanhas não tenham a mesma data de término de vigência. Por fim, efetuar o cadastramento da nova campanha:
 ```
 Exemplo:
-  Campanha 1 : inicio dia 01/10/2017 a 03/10/2017;
+  	Campanha 1 : inicio dia 01/10/2017 a 03/10/2017;
 	Campanha 2: inicio dia 01/10/2017 a 02/10/2017;
 	Cadastrando Campanha 3: inicio 01/10/2017 a 03/10/2017;
   
